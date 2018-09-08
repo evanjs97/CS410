@@ -1,5 +1,8 @@
 #include "Object3D.hpp"
 
+using namespace std;
+using namespace Eigen;
+
 Object3D::Object3D(vector<vector<string>> file, string filename) : model_file(file), filename(filename) {
 	this->extractVertices();
 }

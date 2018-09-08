@@ -1,7 +1,7 @@
 ﻿// Transforming_Objects.cpp : Defines the entry point for the application.
 //
 #include "TransformingObjects.hpp"
-
+#include "FileHandler.hpp"
 using namespace std;
 
 int main(int argc, char * argv[])
@@ -10,8 +10,8 @@ int main(int argc, char * argv[])
 		string filename = argv[1];
 		cout << "Filename: " << filename << endl;
 		TransformingObjects transformers;
-		FileHandler::readFile(filename, transformers);
-        cout << "Models: \n" << transformers << endl;
+		FileHandler::readFile(filename);
+//         cout << "Models: \n" << transformers << endl;
 		return 0;
 	}
 	return 0;
@@ -22,4 +22,9 @@ ostream& operator<<(ostream& os, const TransformingObjects& trobj) {
         os << obj << endl;
     }
     return os;
+}
+
+
+void TransformingObjects::addModel(Object3D model) {
+    this->models.push_back(model);
 }

@@ -6,20 +6,19 @@
 #include<vector>
 #include<Eigen/Dense>
 
-using namespace Eigen;
-using namespace std;
 
 class Transformation {
     
 public:
-    Transformation(vector<string> values);
+    Transformation(std::vector<std::string>& values);
 private:
-    Matrix<double,4,4> transformation;
-    Matrix<double,4,1> translate;
-    Matrix<double,4,1,> rotate;
-    double theta;
-    double scale;
+    Eigen::Matrix<double,4,4> transformation = Eigen::Matrix<double,4,4>::Zero();
+    Eigen::Vector3d translate;
+    Eigen::Vector3d rotate;
+    double theta = 0;
+    double scale = 0;
     void createTransformationMatrix();
-}
+    Eigen::Matrix<double,4,4> setUpRotation();
+};
 
 #endif

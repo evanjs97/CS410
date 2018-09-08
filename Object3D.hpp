@@ -6,18 +6,15 @@
 #include<Eigen/Dense>
 #include<vector>
 
-using namespace Eigen;
-using namespace std;
-
 class Object3D{
 	public:
-		Object3D(vector<vector<string>> file, string filename);
-		friend ostream& operator<<(ostream& os, const Object3D& object);
+		Object3D(std::vector<std::vector<std::string>> file, std::string filename);
+		friend std::ostream& operator<<(std::ostream& os, const Object3D& object);
 
 	private:
-		vector<Matrix<double, 3, 1>> vertices;
-		vector<vector<string>> model_file;
-        string filename;
+		std::vector<Eigen::Matrix<double, 3, 1>> vertices;
+		std::vector<std::vector<std::string>> model_file;
+        std::string filename;
 		void extractVertices();
 };
 
