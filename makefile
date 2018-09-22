@@ -3,7 +3,7 @@ DEBUG = -g
 CFLAGS = -Wall -O3 -c $(DEBUG) -std=c++14
 LFLAGS = -Wall -lpthread $(DEBUG)
 OBJS = Object3D.o TransformingObjects.o FileHandler.o Transformation.o
-INCLUDE =-I/s/bach/g/under/evanjs/CS410/Libraries/eigen_library -I/s/bach/g/under/evanjs/CS410/Libraries/boost_library
+INCLUDE =-I Libraries/eigen_library
 
 modeltoworld : $(OBJS)
 	$(CC) $(OBJS) $(INCLUDE) $(LFLAGS) -o modeltoworld

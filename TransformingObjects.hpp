@@ -13,10 +13,11 @@ class FileHandler;
 
 class TransformingObjects {
 public:
-	void addModel(Object3D model);
 	friend std::ostream& operator<<(std::ostream& os, const TransformingObjects& trobj);
+    static void transformObjects();
 private:
 	std::vector<Object3D> models;
+    
 	
 };
 
